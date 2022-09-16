@@ -51,4 +51,5 @@
         <item>https://twitter.com</item>
     </string-array>
     <string name="pref_default_fav_social">https://facebook.com</string>
+    <string name="nav_send_message">sent</string>
 </resources>
