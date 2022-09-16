@@ -81,8 +81,8 @@ private ActivityNoteListBinding binding;
         final LinearLayoutManager notesLayoutManager = new LinearLayoutManager(this);
         recyclerNotes.setLayoutManager(notesLayoutManager);
 
-        List<NoteInfo> notes = DataManager.getInstance().getNotes();
-        mNoteRecyclerAdapter = new NoteRecyclerAdapter(this,notes);
+        //List<NoteInfo> notes = DataManager.getInstance().getNotes();
+        mNoteRecyclerAdapter = new NoteRecyclerAdapter(this,null);
         recyclerNotes.setAdapter(mNoteRecyclerAdapter);
 
 
