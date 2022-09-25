@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.noteactivity.NoteKeeperDatabaseContract.CourseInfoEntry;
 import com.example.noteactivity.NoteKeeperDatabaseContract.NoteInfoEntry;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapte
         if(mCursor == null)
             return;
         // Get column indexes from mCursor
-        mCoursePos = mCursor.getColumnIndex(NoteInfoEntry.COLUMN_COURSE_ID);
+        mCoursePos = mCursor.getColumnIndex(CourseInfoEntry.COLUMN_COURSE_TITLE);
         mNoteTitlePos = mCursor.getColumnIndex(NoteInfoEntry.COLUMN_NOTE_TITLE);
         mIdPos = mCursor.getColumnIndex(NoteInfoEntry._ID);
     }
@@ -57,7 +58,7 @@ public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder,  @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder( ViewHolder holder, int position) {
         mCursor.moveToPosition(position);
         String course = mCursor.getString(mCoursePos);
         String noteTitle = mCursor.getString(mNoteTitlePos);
